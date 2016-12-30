@@ -1,6 +1,6 @@
 # Sonatype Lifecycle Docker Container
 
-Sonatype Nexus Lifecycle is a Java and Javascript lifecycle manager that includes artifact and package scanning.
+Sonatype Nexus Lifecycle is a Java and Javascript lifecycle manager that includes artifact and package scanning. You must have a [license](https://www.sonatype.com/nexus-lifecycle) in order to use this software.
 
 ### Basic Usage
 
@@ -18,3 +18,5 @@ To run the container with an exposed port on the host of 8070 (the default port 
 ### Build Image 
 
 	$ docker build -t sonatype-lifecycle
+
+**Note: This Docker container is not associated with Sonatype and is not an official container. Sonatype Lifecycle is downloaded from Sonatypes [website](https://www.sonatype.com/) in the build process.**
