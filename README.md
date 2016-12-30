@@ -1,4 +1,4 @@
-# Sonatype Docker Container
+# Sonatype Lifecycle Docker Container
 
 Sonatype Nexus Lifecycle is a Java and Javascript lifecycle manager that includes artifact and package scanning.
 
