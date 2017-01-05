@@ -1,5 +1,6 @@
 FROM alpine:3.4
 ARG USER_HOME_DIR="/root"
+MAINTAINER Brady Owens <brady@fastglass.net>
 
 # Install cURL
 RUN apk --update add curl ca-certificates tar
