@@ -19,4 +19,4 @@ To run the container with an exposed port on the host of 8070 (the default port 
 
 	$ docker build -t sonatype-lifecycle
 
-**Note: This Docker container is not associated with Sonatype and is not an official container. Sonatype Lifecycle is downloaded from Sonatypes [website](https://www.sonatype.com/) in the build process.**
+**Note: This Docker container is not associated with Sonatype and is not an official container. Sonatype Lifecycle is downloaded from Sonatype's [website](https://www.sonatype.com/) in the build process.**

@@ -1,15 +1,14 @@
 FROM alpine:3.4
-ARG USER_HOME_DIR="/root"
 MAINTAINER Brady Owens <brady@fastglass.net>
 
-# Java Version
+# Java Version and Sonatype version
 ENV JAVA_VERSION_MAJOR 8
 ENV JAVA_VERSION_MINOR 111
 ENV JAVA_VERSION_BUILD 14
 ENV JAVA_PACKAGE       jre
 ENV SONATYPE_VERSION 1.24.0-02
 
-# Install cURL
+# Install cURL, Java, and Sonatype Lifecycle Server
 RUN apk --update add curl ca-certificates tar && \
     curl -Ls https://github.com/sgerrand/alpine-pkg-glibc/releases/download/unreleased/glibc-2.23-r3.apk > /tmp/glibc-2.23-r3.apk && \
     apk add --allow-untrusted /tmp/glibc-2.23-r3.apk && \
@@ -44,4 +43,5 @@ ENV JAVA_HOME /opt/${JAVA_PACKAGE}
 ENV PATH ${PATH}:${JAVA_HOME}/bin
 WORKDIR /opt/sonatype
 EXPOSE 8070
+# Start Sonatype
 ENTRYPOINT ["/opt/sonatype/demo.sh"]
