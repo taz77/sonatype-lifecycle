@@ -10,7 +10,7 @@ To run the container with an exposed port on the host of 8070 (the default port 
 
 ### Arguments
 
-* **Exposed ports**: 22
+* **Exposed ports**: 8070
 * **Volumes**:
  	* */sonatype-work/*: Volume to store the Sonatype data
 	* */log/*: Volume to store the server logs
