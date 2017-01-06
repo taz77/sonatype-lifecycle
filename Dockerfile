@@ -2,11 +2,6 @@ FROM alpine:3.4
 ARG USER_HOME_DIR="/root"
 MAINTAINER Brady Owens <brady@fastglass.net>
 
-# Install cURL
-RUN apk --update add curl ca-certificates tar
-RUN curl -Ls https://github.com/sgerrand/alpine-pkg-glibc/releases/download/unreleased/glibc-2.23-r3.apk > /tmp/glibc-2.23-r3.apk
-RUN apk add --allow-untrusted /tmp/glibc-2.23-r3.apk
-
 # Java Version
 ENV JAVA_VERSION_MAJOR 8
 ENV JAVA_VERSION_MINOR 111
@@ -14,8 +9,11 @@ ENV JAVA_VERSION_BUILD 14
 ENV JAVA_PACKAGE       jre
 ENV SONATYPE_VERSION 1.24.0-02
 
-# Download and unarchive Java
-RUN mkdir /opt && curl -jksSLH "Cookie: oraclelicense=accept-securebackup-cookie"\
+# Install cURL
+RUN apk --update add curl ca-certificates tar && \
+    curl -Ls https://github.com/sgerrand/alpine-pkg-glibc/releases/download/unreleased/glibc-2.23-r3.apk > /tmp/glibc-2.23-r3.apk && \
+    apk add --allow-untrusted /tmp/glibc-2.23-r3.apk && \
+    mkdir /opt && curl -jksSLH "Cookie: oraclelicense=accept-securebackup-cookie"\
   http://download.oracle.com/otn-pub/java/jdk/${JAVA_VERSION_MAJOR}u${JAVA_VERSION_MINOR}-b${JAVA_VERSION_BUILD}/${JAVA_PACKAGE}-${JAVA_VERSION_MAJOR}u${JAVA_VERSION_MINOR}-linux-x64.tar.gz \
     | tar -xzf - -C /opt &&\
     ln -s /opt/${JAVA_PACKAGE}1.${JAVA_VERSION_MAJOR}.0_${JAVA_VERSION_MINOR} /opt/${JAVA_PACKAGE} &&\
