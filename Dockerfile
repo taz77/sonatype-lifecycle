@@ -43,5 +43,8 @@ ENV JAVA_HOME /opt/${JAVA_PACKAGE}
 ENV PATH ${PATH}:${JAVA_HOME}/bin
 WORKDIR /opt/sonatype
 EXPOSE 8070
+
+VOLUME ["/opt/sonatype/log" , "/opt/sonatype/sonatype-work"]
+
 # Start Sonatype
 ENTRYPOINT ["/opt/sonatype/demo.sh"]
