@@ -2,11 +2,11 @@ FROM alpine:3.4
 MAINTAINER Brady Owens <brady@fastglass.net>
 
 # Java Version and Sonatype version
-ENV JAVA_VERSION_MAJOR 8
-ENV JAVA_VERSION_MINOR 111
-ENV JAVA_VERSION_BUILD 14
-ENV JAVA_PACKAGE       jre
-ENV SONATYPE_VERSION 1.24.0-02
+ARG JAVA_VERSION_MAJOR 8
+ARG JAVA_VERSION_MINOR 111
+ARG JAVA_VERSION_BUILD 14
+ARG JAVA_PACKAGE       jre
+ARG SONATYPE_VERSION 1.24.0-02
 
 # Install cURL, Java, and Sonatype Lifecycle Server
 RUN apk --update add curl ca-certificates tar && \
