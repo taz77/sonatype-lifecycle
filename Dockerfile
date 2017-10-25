@@ -10,8 +10,8 @@ ARG SONATYPE_VERSION=1.38.0-02
 
 # Install cURL, Java, and Sonatype Lifecycle Server
 RUN apk --update add curl ca-certificates tar && \
-    curl -Ls https://github.com/sgerrand/alpine-pkg-glibc/releases/download/unreleased/glibc-2.23-r3.apk > /tmp/glibc-2.23-r3.apk && \
-    apk add --allow-untrusted /tmp/glibc-2.23-r3.apk && \
+    curl -Ls https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.26-r0/glibc-2.26-r0.apk > /tmp/glibc-2.26-r0.apk && \
+    apk add --allow-untrusted /tmp/glibc-2.26-r0.apk && \
     mkdir /opt && curl -jksSLH "Cookie: oraclelicense=accept-securebackup-cookie"\
   http://download.oracle.com/otn-pub/java/jdk/${JAVA_VERSION_MAJOR}u${JAVA_VERSION_MINOR}-b${JAVA_VERSION_BUILD}/${JAVA_PACKAGE}-${JAVA_VERSION_MAJOR}u${JAVA_VERSION_MINOR}-linux-x64.tar.gz \
     | tar -xzf - -C /opt &&\
