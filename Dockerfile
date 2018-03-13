@@ -6,7 +6,7 @@ ARG JAVA_VERSION_MAJOR=8
 ARG JAVA_VERSION_MINOR=151
 ARG JAVA_VERSION_BUILD=12
 ARG JAVA_PACKAGE=jre
-ARG SONATYPE_VERSION=1.38.0-02
+ARG SONATYPE_VERSION=1.45.0-01
 
 # Install cURL, Java, and Sonatype Lifecycle Server
 RUN apk --update add curl ca-certificates tar && \
